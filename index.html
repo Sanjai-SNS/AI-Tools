@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Universe of AI Tools: A Student's Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F9FA;
+            color: #495057;
+        }
+        .chart-container {
+            position: relative;
+            margin: auto;
+            height: 320px;
+            width: 100%;
+            max-width: 500px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #F94144, #F3722C, #F8961E);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .kpi-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            text-align: center;
+            border: 1px solid #e9ecef;
+        }
+        .kpi-value {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1;
+            color: #F94144;
+        }
+        .kpi-label {
+            font-size: 1rem;
+            color: #577590;
+            margin-top: 0.5rem;
+        }
+        .section-card {
+            background-color: #ffffff;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            margin-bottom: 2rem;
+        }
+        .tool-link {
+            display: inline-block;
+            background-color: #F8F9FA;
+            color: #43AA8B;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+            border: 1px solid #dee2e6;
+        }
+        .tool-link:hover {
+            background-color: #43AA8B;
+            color: white;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <header class="text-center py-12 md:py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl md:text-6xl font-black gradient-text">The Universe of AI Tools</h1>
+            <p class="mt-4 text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">An Educator's Guide to AI in Academia, from Mainstream Platforms to Undiscovered Gems</p>
+            <a href="https://aitoolsguide.com/" target="_blank" class="tool-link" title="AI-Tools", style="height: 10;">AI-Tools-Guide</a>
+        </div>
+    </header>
+    <main class="container mx-auto px-6 py-8">
+        <section id="kpis" class="section-card">
+            <h2 class="text-3xl font-bold text-center mb-2 text-gray-800">AI's Footprint in Education</h2>
+            <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">AI is no longer a futuristic concept; it's a daily reality for students. The data reveals a landscape of rapid adoption, primarily driven by the need for research and writing efficiency.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <div class="kpi-card">
+                    <div class="kpi-value">23%</div>
+                    <div class="kpi-label">of students report using AI tools daily</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">84%</div>
+                    <div class="kpi-label">use AI for research purposes</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">76%</div>
+                    <div class="kpi-label">use AI for writing assistance</div>
+                </div>
+            </div>
+        </section>
+        <section id="usage-perception" class="section-card">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold mb-2 text-gray-800">How Students Perceive AI</h3>
+                    <p class="text-gray-600 mb-4">While students praise AI for its speed, there's a healthy skepticism about its reliability. This "trust gap" highlights a critical pedagogical need: teaching students to verify and critically evaluate AI-generated content, leveraging it as a starting point, not a final answer.</p>
+                    <div class="chart-container">
+                        <canvas id="perceptionChart"></canvas>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-2 text-gray-800">Frequency of AI Use</h3>
+                    <p class="text-gray-600 mb-4">The integration of AI into academic workflows is significant, with nearly half of all students engaging with these tools multiple times a week. This consistent usage underscores the importance of formal guidance and ethical frameworks in education.</p>
+                    <div class="chart-container">
+                        <canvas id="frequencyChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="major-tools" class="section-card">
+            <h2 class="text-3xl font-bold text-center mb-2 text-gray-800">The Major Constellations: Essential AI Tools</h2>
+            <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">These platforms represent the cornerstones of the student AI experience, offering broad capabilities across different domains. They are the first stop for students looking to enhance productivity, creativity, and learning.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-slate-50 p-6 rounded-lg border">
+                    <h3 class="font-bold text-xl mb-3 text-gray-800">✍️ Writing & Productivity</h3>
+                    <ul class="space-y-4">
+                        <li><a href="https://www.grammarly.com/" target="_blank" class="tool-link">Grammarly</a></li>
+                        <li><a href="https://www.notion.so/product/ai" target="_blank" class="tool-link">Notion AI</a></li>
+                        <li><a href="https://quillbot.com/" target="_blank" class="tool-link">QuillBot</a></li>
+                        <li><a href="https://otter.ai/" target="_blank" class="tool-link">Otter.ai</a></li>
+                        <li><a href="https://www.jasper.ai/" target="_blank" class="tool-link">Jasper</a></li>
+                        <li><a href="https://www.copy.ai/" target="_blank" class="tool-link">Copy.ai</a></li>
+                        <li><a href="https://www.writesonic.com/" target="_blank" class="tool-link">Writesonic</a></li>
+                        <li><a href="https://www.sudowrite.com/" target="_blank" class="tool-link">Sudowrite</a></li>
+                        <li><a href="https://www.anyword.com/" target="_blank" class="tool-link">Anyword</a></li>
+                        <li><a href="https://www.scalenut.com/" target="_blank" class="tool-link">Scalenut</a></li>
+                        <li><a href="https://www.suna.so/" target="_blank" class="tool-link">Suna.so</a></li>
+                        <li><a href="https://www.notegpt.io/" target="_blank" class="tool-link">NoteGPT</a></li>
+                        <li><a href="https://www.easypeasy.ai/" target="_blank" class="tool-link">Easy Peasy AI</a></li>
+                        <li><a href="https://www.wordwise.ai/" target="_blank" class="tool-link">Wordwise AI</a></li>
+                    </ul>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-lg border">
+                    <h3 class="font-bold text-xl mb-3 text-gray-800">🤖 General & Search</h3>
+                    <ul class="space-y-4">
+                        <li><a href="https://chat.openai.com/" target="_blank" class="tool-link">ChatGPT</a></li>
+                        <li><a href="https://gemini.google.com/" target="_blank" class="tool-link">Google Gemini</a></li>
+                        <li><a href="https://www.perplexity.ai/" target="_blank" class="tool-link">Perplexity AI</a></li>
+                        <li><a href="https://www.meta.ai/" target="_blank" class="tool-link">Meta AI</a></li>
+                        <li><a href="https://www.bing.com/ai" target="_blank" class="tool-link">Bing AI</a></li>
+                        <li><a href="https://www.you.com/" target="_blank" class="tool-link">You.com</a></li>
+                        <li><a href="https://neeva.com/" target="_blank" class="tool-link">Neeva</a></li>
+                        <li><a href="https://www.andsearch.ai/" target="_blank" class="tool-link">Andi Search</a></li>
+                        <li><a href="https://www.phind.com/" target="_blank" class="tool-link">Phind</a></li>
+                        <li><a href="https://www.komo.ai/" target="_blank" class="tool-link">Komo AI</a></li>
+                        <li><a href="https://www.lindyai.com/" target="_blank" class="tool-link">Lindy AI</a></li>
+                        <li><a href="https://www.windsurfai.com/" target="_blank" class="tool-link">Windsurf AI</a></li>
+                        <li><a href="https://www.manus.ai/" target="_blank" class="tool-link">Manus AI</a></li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-50 p-6 rounded-lg border">
+                    <h3 class="font-bold text-xl mb-3 text-gray-800">🎨 Visual & Creative</h3>
+                    <ul class="space-y-4">
+                        <li><a href="https://www.midjourney.com/" target="_blank" class="tool-link">Midjourney</a></li>
+                        <li><a href="https://www.adobe.com/sensei/generative-ai/firefly.html" target="_blank" class="tool-link">Adobe Firefly</a></li>
+                        <li><a href="https://www.canva.com/magic-studio/" target="_blank" class="tool-link">Canva Magic Studio</a></li>
+                        <li><a href="https://runwayml.com/" target="_blank" class="tool-link">Runway</a></li>
+                        <li><a href="https://www.dall-e.com/" target="_blank" class="tool-link">DALL·E 3</a></li>
+                        <li><a href="https://www.stable-diffusion.ai/" target="_blank" class="tool-link">Stable Diffusion</a></li>
+                        <li><a href="https://www.leonardo.ai/" target="_blank" class="tool-link">Leonardo.ai</a></li>
+                        <li><a href="https://www.craiyon.com/" target="_blank" class="tool-link">Craiyon</a></li>
+                        <li><a href="https://www.nightcafe.studio/" target="_blank" class="tool-link">NightCafe</a></li>
+                        <li><a href="https://www.artbreeder.com/" target="_blank" class="tool-link">Artbreeder</a></li>
+                        <li><a href="https://www.relevance.ai/" target="_blank" class="tool-link">Relevance AI</a></li>
+                        <li><a href="https://www.ideogram.ai/" target="_blank" class="tool-link">Ideogram</a></li>
+                        <li><a href="https://www.elevenlabs.io/" target="_blank" class="tool-link">ElevenLabs</a></li>
+                        <li><a href="https://www.reve.art/" target="_blank" class="tool-link">Reve.art</a></li>
+                        <li><a href="https://sora-ai.com/" target="_blank" class="tool-link">Sora AI</a></li>
+                    </ul>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-lg border">
+                    <h3 class="font-bold text-xl mb-3 text-gray-800">💻 Coding & Development</h3>
+                    <ul class="space-y-4">
+                        <li><a href="https://github.com/features/copilot" target="_blank" class="tool-link">GitHub Copilot</a></li>
+                        <li><a href="https://www.tabnine.com/" target="_blank" class="tool-link">TabNine</a></li>
+                        <li><a href="https://www.codeium.com/" target="_blank" class="tool-link">Codeium</a></li>
+                        <li><a href="https://aws.amazon.com/codewhisperer/" target="_blank" class="tool-link">Amazon CodeWhisperer</a></li>
+                        <li><a href="https://www.codex.ai/" target="_blank" class="tool-link">Codex</a></li>
+                        <li><a href="https://www.sourcery.ai/" target="_blank" class="tool-link">Sourcery</a></li>
+                        <li><a href="https://www.codium.ai/" target="_blank" class="tool-link">Codium</a></li>
+                        <li><a href="https://www.deepsource.io/" target="_blank" class="tool-link">DeepSource</a></li>
+                        <li><a href="https://www.fig.io/" target="_blank" class="tool-link">Fig</a></li>
+                        <li><a href="https://www.replit.com/" target="_blank" class="tool-link">Replit</a></li>
+                        <li><a href="https://ollama.ai/" target="_blank" class="tool-link">Ollama AI</a></li>
+                        <li><a href="https://www.mistral.ai/" target="_blank" class="tool-link">Mistral AI</a></li>
+                        <li><a href="https://www.qodo.ai/" target="_blank" class="tool-link">Qodo AI</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="diagram-tools" class="section-card">
+            <h2 class="text-3xl font-bold text-center mb-2 text-gray-800">Diagramming & Modeling</h2>
+            <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">These tools help with creating diagrams, flowcharts, and models, useful in both academia and industry for visualizing complex systems and ideas.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-slate-50 p-6 rounded-lg border">
+                    <h3 class="font-bold text-xl mb-3 text-gray-800">📐 Diagram Tools</h3>
+                    <ul class="space-y-4">
+                        <li><a href="https://app.diagrams.net/" target="_blank" class="tool-link">draw.io</a></li>
+                        <li><a href="https://www.eraser.io/" target="_blank" class="tool-link">eraser.io</a></li>
+                        <li><a href="https://excalidraw.com/" target="_blank" class="tool-link">excalidraw.com</a></li>
+                        <li><a href="https://structurizr.com/" target="_blank" class="tool-link">Structurizr</a></li>
+                        <li><a href="https://www.plantuml.com/" target="_blank" class="tool-link">PlantUML</a></li>
+                        <li><a href="https://play.d2lang.com/" target="_blank" class="tool-link">D2</a></li>
+                        <li><a href="https://mermaid.js.org/" target="_blank" class="tool-link">Mermaid</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="niche-tools" class="section-card">
+            <h2 class="text-3xl font-bold text-center mb-2 text-gray-800">Exploring Nebulae: Niche & Specialized AI</h2>
+            <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">Beyond the giants, a vibrant ecosystem of specialized tools offers targeted solutions for specific academic needs. These tools demonstrate the depth and breadth of AI's application in research and creative work.</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold mb-2 text-gray-800">The Rise of the Specialist</h3>
+                    <p class="text-gray-600 mb-4">While major platforms offer versatility, a growing number of tools are being built for hyper-specific tasks, from advanced literature reviews to scientific experimentation. This chart shows the concentration of tools in key academic support areas.</p>
+                    <div class="chart-container h-96">
+                        <canvas id="nicheToolCategories"></canvas>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-2 text-gray-800">Key Research Tools to Discover</h3>
+                    <p class="text-gray-600 mb-4">These selected tools provide a competitive edge in academic research, automating tedious tasks and uncovering new insights.</p>
+                    <ul class="space-y-3 text-center">
+                        <li><a href="https://www.wolframalpha.com/" target="_blank" class="tool-link">Wolfram Alpha (Computational Engine)</a></li>
+                        <li><a href="https://elicit.com/" target="_blank" class="tool-link">Elicit (Literature Review)</a></li>
+                        <li><a href="https://www.connectedpapers.com/" target="_blank" class="tool-link">Connected Papers (Citation Visualization)</a></li>
+                        <li><a href="https://consensus.app/" target="_blank" class="tool-link">Consensus (Research Synthesis)</a></li>
+                        <li><a href="https://www.krea.ai/" target="_blank" class="tool-link">Krea AI (Real-time Creative)</a></li>
+                        <li><a href="https://pinokio.computer/" target="_blank" class="tool-link">Pinokio (Local AI Launcher)</a></li>
+                        <li><a href="https://www.relevance.ai/" target="_blank" class="tool-link">Relevance AI (Data Exploration)</a></li>
+                        <li><a href="https://www.synthesys.io/" target="_blank" class="tool-link">Synthesys (AI Video & Voice)</a></li>
+                        <li><a href="https://www.descript.com/" target="_blank" class="tool-link">Descript (Audio & Video Editing)</a></li>
+                        <li><a href="https://www.otter.ai/" target="_blank" class="tool-link">Otter.ai (Transcription)</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="additional-tools" class="section-card">
+            <h2 class="text-3xl font-bold text-center mb-2 text-gray-800">Diverse Domains: Expanding AI Horizons</h2>
+            <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">From healthcare to finance, AI tools are making inroads into a multitude of fields, providing specialized solutions and insights. Explore these tools across various domains.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-slate-50 p-6 rounded-lg border">
+                    <h3 class="font-bold text-xl mb-3 text-gray-800">🏥 Healthcare & Medicine</h3>
+                    <ul class="space-y-4">
+                        <li><a href="https://www.deepmind.com/health" target="_blank" class="tool-link">DeepMind Health</a></li>
+                        <li><a href="https://www.pathai.com/" target="_blank" class="tool-link">PathAI</a></li>
+                        <li><a href="https://www.ibm.com/watson-health" target="_blank" class="tool-link">IBM Watson Health</a></li>
+                        <li><a href="https://www.ada.com/" target="_blank" class="tool-link">Ada Health</a></li>
+                        <li><a href="https://www.buoyhealth.com/" target="_blank" class="tool-link">Buoy Health</a></li>
+                    </ul>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-lg border">
+                    <h3 class="font-bold text-xl mb-3 text-gray-800">💰 Finance & Trading</h3>
+                    <ul class="space-y-4">
+                        <li><a href="https://www.kensho.com/" target="_blank" class="tool-link">Kensho</a></li>
+                        <li><a href="https://www.alphasense.com/" target="_blank" class="tool-link">AlphaSense</a></li>
+                        <li><a href="https://www.ayasdi.com/" target="_blank" class="tool-link">Ayasdi</a></li>
+                        <li><a href="https://www.casetext.com/" target="_blank" class="tool-link">CaseText</a></li>
+                        <li><a href="https://www.numer.ai/" target="_blank" class="tool-link">Numerai</a></li>
+                    </ul>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-lg border">
+                    <h3 class="font-bold text-xl mb-3 text-gray-800">🎵 Music & Audio</h3>
+                    <ul class="space-y-4">
+                        <li><a href="https://www.ampermusic.com/" target="_blank" class="tool-link">Amper Music</a></li>
+                        <li><a href="https://www.landr.com/" target="_blank" class="tool-link">LANDR</a></li>
+                        <li><a href="https://www.boomy.com/" target="_blank" class="tool-link">Boomy</a></li>
+                        <li><a href="https://www.soundraw.io/" target="_blank" class="tool-link">Soundraw</a></li>
+                        <li><a href="https://www.aiva.ai/" target="_blank" class="tool-link">AIVA</a></li>
+                        <li><a href="https://www.suno.ai/" target="_blank" class="tool-link">Suno</a></li>
+                    </ul>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-lg border">
+                    <h3 class="font-bold text-xl mb-3 text-gray-800">🌐 Language Learning</h3>
+                    <ul class="space-y-4">
+                        <li><a href="https://www.duolingo.com/" target="_blank" class="tool-link">Duolingo</a></li>
+                        <li><a href="https://www.babbel.com/" target="_blank" class="tool-link">Babbel</a></li>
+                        <li><a href="https://www.memrise.com/" target="_blank" class="tool-link">Memrise</a></li>
+                        <li><a href="https://www.busuu.com/" target="_blank" class="tool-link">Busuu</a></li>
+                        <li><a href="https://www.lingoda.com/" target="_blank" class="tool-link">Lingoda</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="video-presentation-tools" class="section-card">
+            <h2 class="text-3xl font-bold text-center mb-2 text-gray-800">Video & Presentation Tools</h2>
+            <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">These tools assist in creating and editing videos and presentations, catering to both educational and professional needs.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-slate-50 p-6 rounded-lg border">
+                    <ul class="space-y-4">
+                        <li><a href="https://www.veed.io/" target="_blank" class="tool-link">Veed.io</a></li>
+                        <li><a href="https://gamma.app/" target="_blank" class="tool-link">Gamma.app</a></li>
+                        <li><a href="https://www.renderforest.com/" target="_blank" class="tool-link">Renderforest</a></li>
+                        <li><a href="https://deepai.org/" target="_blank" class="tool-link">DeepAI</a></li>
+                        <li><a href="https://fliki.ai/" target="_blank" class="tool-link">Fliki AI</a></li>
+                        <li><a href="https://aippt.com/" target="_blank" class="tool-link">AiPPT</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="additional-niche-tools" class="section-card">
+            <h2 class="text-3xl font-bold text-center mb-2 text-gray-800">Specialized AI: More Hidden Gems</h2>
+            <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">Dive deeper into the vast array of specialized tools designed for unique tasks and industries, showcasing the flexibility and adaptability of AI technology.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-slate-50 p-6 rounded-lg border">
+                    <h3 class="font-bold text-xl mb-3 text-gray-800">📊 Data & Analytics</h3>
+                    <ul class="space-y-4">
+                        <li><a href="https://www.tableau.com/" target="_blank" class="tool-link">Tableau (Data Viz)</a></li>
+                        <li><a href="https://www.algolia.com/" target="_blank" class="tool-link">Algolia (Search)</a></li>
+                        <li><a href="https://www.segment.com/" target="_blank" class="tool-link">Segment (Customer Data)</a></li>
+                        <li><a href="https://www.mixpanel.com/" target="_blank" class="tool-link">Mixpanel (Analytics)</a></li>
+                        <li><a href="https://www.optimizely.com/" target="_blank" class="tool-link">Optimizely (Experimentation)</a></li>
+                    </ul>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-lg border">
+                    <h3 class="font-bold text-xl mb-3 text-gray-800">🛠️ Productivity & Management</h3>
+                    <ul class="space-y-4">
+                        <li><a href="https://www.todoist.com/" target="_blank" class="tool-link">Todoist</a></li>
+                        <li><a href="https://www.trello.com/" target="_blank" class="tool-link">Trello</a></li>
+                        <li><a href="https://www.notion.so/" target="_blank" class="tool-link">Notion</a></li>
+                        <li><a href="https://www.airtable.com/" target="_blank" class="tool-link">Airtable</a></li>
+                        <li><a href="https://www.clickup.com/" target="_blank" class="tool-link">ClickUp</a></li>
+                    </ul>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-lg border">
+                    <h3 class="font-bold text-xl mb-3 text-gray-800">🎭 Entertainment & Media</h3>
+                    <ul class="space-y-4">
+                        <li><a href="https://www.netflix.com/" target="_blank" class="tool-link">Netflix (Recommender System)</a></li>
+                        <li><a href="https://www.spotify.com/" target="_blank" class="tool-link">Spotify</a></li>
+                        <li><a href="https://www.pandora.com/" target="_blank" class="tool-link">Pandora</a></li>
+                        <li><a href="https://www.hulu.com/" target="_blank" class="tool-link">Hulu</a></li>
+                        <li><a href="https://www.disneyplus.com/" target="_blank" class="tool-link">Disney+</a></li>
+                    </ul>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-lg border">
+                    <h3 class="font-bold text-xl mb-3 text-gray-800">🏠 Home & Lifestyle</h3>
+                    <ul class="space-y-4">
+                        <li><a href="https://www.amazon.com/Alexa-Echo-Smart-Speaker-with-Wi-Fi-Black/dp/B07FZ8S74R" target="_blank" class="tool-link">Amazon Alexa</a></li>
+                        <li><a href="https://www.google.com/home/" target="_blank" class="tool-link">Google Assistant</a></li>
+                        <li><a href="https://www.apple.com/homepod-mini/" target="_blank" class="tool-link">Apple HomePod</a></li>
+                        <li><a href="https://www.samsung.com/global/galaxy/apps/bixby/" target="_blank" class="tool-link">Samsung Bixby</a></li>
+                        <li><a href="https://www.ecobee.com/" target="_blank" class="tool-link">Ecobee</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="future-trends" class="section-card">
+            <h2 class="text-3xl font-bold text-center mb-2 text-gray-800">Navigating the Future: Trends & Ethics</h2>
+            <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">The AI landscape is evolving at a breathtaking pace. Understanding emerging trends and grounding AI use in strong ethical principles are crucial skills for the next generation of leaders and innovators.</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold mb-2 text-gray-800">The Proliferation of Generative AI</h3>
+                    <p class="text-gray-600 mb-4">The adoption of generative AI in the professional world is skyrocketing, demonstrating its immense value. This trend signals a fundamental shift in workflows, where AI is not just an assistant but a core partner in creation and problem-solving.</p>
+                    <div class="chart-container" style="height: 280px;">
+                        <canvas id="adoptionTrendChart"></canvas>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-2 text-gray-800">The "Human in the Loop" Imperative</h3>
+                    <p class="text-gray-600 mb-4">As AI becomes more autonomous, human oversight remains critical. The "Human in the Loop" model ensures that ethical judgment, critical thinking, and ultimate responsibility rest with the user, making AI a powerful tool, not an infallible oracle.</p>
+                    <div class="p-4 border-2 border-dashed rounded-lg bg-slate-50">
+                        <div class="flex flex-col items-center text-center space-y-2">
+                            <div class="p-3 bg-white rounded-lg shadow-sm border">User Prompt</div>
+                            <div class="text-2xl font-bold text-gray-400">↓</div>
+                            <div class="p-3 bg-white rounded-lg shadow-sm border">AI Generates Output</div>
+                            <div class="text-2xl font-bold text-gray-400">↓</div>
+                            <div class="p-4 bg-red-100 text-red-800 rounded-lg shadow-md border-2 border-red-300 font-bold">Human Review & Validation</div>
+                            <div class="text-2xl font-bold text-gray-400">↓</div>
+                            <div class="p-3 bg-green-100 text-green-800 rounded-lg shadow-sm border border-green-300">Final, Verified Outcome</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-gray-800 text-white text-center py-8 mt-10">
+        <div class="container mx-auto px-6">
+            <p class="font-bold text-lg">Empowering the Next Generation with AI Literacy</p>
+            <p class="mt-2 text-sm text-gray-400 max-w-2xl mx-auto">The goal is not to replace fundamental skills but to augment human intellect. By teaching students to be critical, ethical, and creative users of AI, we prepare them to lead in an increasingly intelligent world.</p>
+        </div>
+    </footer>
+    <script>
+        const wrapLabel = (str, maxWidth) => {
+            if (typeof str !== 'string' || str.length <= maxWidth) {
+                return str;
+            }
+            const words = str.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+            for (let i = 1; i < words.length; i++) {
+                if (currentLine.length + words[i].length + 1 < maxWidth) {
+                    currentLine += ' ' + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        };
+
+        const chartTooltipCallback = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            return Array.isArray(label) ? label.join(' ') : label;
+                        }
+                    }
+                },
+                legend: {
+                    labels: {
+                        font: {
+                            family: 'Inter',
+                            size: 12,
+                        }
+                    }
+                }
+            }
+        };
+        const colors = {
+            red: '#F94144',
+            orange: '#F3722C',
+            amber: '#F8961E',
+            yellow: '#F9C74F',
+            green: '#90BE6D',
+            teal: '#43AA8B',
+            slate: '#577590',
+            lightGray: '#F8F9FA'
+        };
+        const perceptionCtx = document.getElementById('perceptionChart');
+        if (perceptionCtx) {
+            new Chart(perceptionCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Rated for Speed & Efficiency', 'Rated for Accuracy'],
+                    datasets: [{
+                        label: 'Student Perception (%)',
+                        data: [58, 6],
+                        backgroundColor: [colors.teal, colors.red],
+                        borderColor: [colors.teal, colors.red],
+                        borderWidth: 1,
+                        borderRadius: 4,
+                    }]
+                },
+                options: { ...chartTooltipCallback,
+                    indexAxis: 'y',
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%'
+                                }
+                            }
+                        }
+                    },
+                    plugins: { ...chartTooltipCallback.plugins,
+                        legend: { display: false }
+                    },
+                    maintainAspectRatio: false
+                }
+            });
+        }
+        const frequencyCtx = document.getElementById('frequencyChart');
+        if (frequencyCtx) {
+            new Chart(frequencyCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Daily', 'Several times a week', 'Less Often'],
+                    datasets: [{
+                        label: 'Frequency of Use',
+                        data: [23, 25, 52],
+                        backgroundColor: [colors.red, colors.orange, colors.lightGray],
+                        borderColor: '#ffffff',
+                        borderWidth: 4,
+                    }]
+                },
+                options: { ...chartTooltipCallback,
+                    maintainAspectRatio: false,
+                    cutout: '60%',
+                }
+            });
+        }
+        const nicheToolCategoriesCtx = document.getElementById('nicheToolCategories');
+        if (nicheToolCategoriesCtx) {
+            new Chart(nicheToolCategoriesCtx, {
+                type: 'bar',
+                data: {
+                    labels: [
+                        'Literature & Citation Search',
+                        'Data Extraction & Analysis',
+                        'Creative & Design',
+                        'Academic Writing Support',
+                        'Study & Exam Prep'
+                    ].map(label => wrapLabel(label, 20)),
+                    datasets: [{
+                        label: 'Number of Specialized Tools',
+                        data: [15, 4, 5, 4, 2],
+                        backgroundColor: [colors.slate, colors.teal, colors.green, colors.yellow, colors.orange],
+                        borderWidth: 0,
+                        borderRadius: 4,
+                    }]
+                },
+                options: { ...chartTooltipCallback,
+                    indexAxis: 'y',
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            beginAtZero: true
+                        },
+                        y: {
+                            ticks: {
+                                font: {
+                                    size: 11
+                                }
+                            }
+                        }
+                    },
+                    plugins: { ...chartTooltipCallback.plugins,
+                        legend: { display: false }
+                    }
+                }
+            });
+        }
+
+        const adoptionTrendCtx = document.getElementById('adoptionTrendChart');
+        if(adoptionTrendCtx){
+            new Chart(adoptionTrendCtx, {
+                type: 'line',
+                data: {
+                    labels: ['2023', '2024'],
+                    datasets: [{
+                        label: 'Corporate AI Adoption',
+                        data: [55, 75],
+                        fill: true,
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: colors.teal,
+                        tension: 0.1,
+                        pointBackgroundColor: colors.teal,
+                        pointRadius: 5
+                    }]
+                },
+                options: {
+                    ...chartTooltipCallback,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: {
+                                callback: function(value) { return value + '%' }
+                            }
+                        }
+                    },
+                    plugins: {
+                        ...chartTooltipCallback.plugins,
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
