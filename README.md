@@ -3,7 +3,7 @@
 
 This project is an interactive, visually-rich guide designed to help students and educators explore the vast ecosystem of AI tools. From writing assistance and coding companions to diagramming and niche academic tools — this guide categorizes and links to some of the most powerful AI platforms available today.
 
-🔗 **Live Site:** [Visit on GitHub Pages](https://<your-username>.github.io/<repo-name>/)
+🔗 **Live Site:** [Visit on GitHub Pages](https://sanjai-sns.github.io/AI-Tools/)
 
 ---
 
@@ -31,7 +31,7 @@ To run locally:
 
 1. Download or clone the repository:
    ```bash
-   git clone https://github.com/<your-username>/<repo-name>.git
+   https://github.com/Sanjai-SNS/AI-Tools.git
    ```
 2. Open `index.html` in your browser.
 
